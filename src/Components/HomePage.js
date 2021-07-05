@@ -41,7 +41,7 @@ function HomePage() {
     }, [students])
 
     async function saveStudentDetails(studentData) {
-        // console.log(studentData)
+
 
         const savedStudent = await API.graphql({ query: createStudentMutation, variables: { input: studentData } })
         //save actual stud image

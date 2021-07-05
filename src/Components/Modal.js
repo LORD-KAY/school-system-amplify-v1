@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Modal, Form } from 'react-bootstrap'
 import { Storage } from 'aws-amplify'
 
@@ -6,15 +6,9 @@ const initStudentFormData = { firstname: '', lastname: '', age: '', studentId: '
 
 function AddStudentModal(props) {
 
-    const [shMod, setShMod] = useState(false)
-    function handleClose(state) {
-        props.handleShow(shMod)
-        setShMod(state)
-
+    function handleClose() {
+        props.handleShow(false)
     }
-    useEffect(() => {
-        setShMod(props.state)
-    }, [props.state])
     const [studentFormData, setStudentFormData] = useState(initStudentFormData)
 
     function onFormChange(e) {
@@ -43,7 +37,7 @@ function AddStudentModal(props) {
         <div>
 
 
-            <Modal show={props.showModal} onHide={() => handleClose(false)}>
+            <Modal show={props.showModal} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add Student</Modal.Title>
                 </Modal.Header>
