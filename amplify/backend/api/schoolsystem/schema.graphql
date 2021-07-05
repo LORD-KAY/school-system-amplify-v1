@@ -1,0 +1,9 @@
+type Todo @model {
+  id: ID!
+  firstname: String!
+  lastname: String!
+  age: String
+  studentId: String
+  program: String
+  image: String
+}
