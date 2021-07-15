@@ -1,5 +1,4 @@
 import React from 'react'
-// import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 import { Table } from 'react-bootstrap'
@@ -15,6 +14,8 @@ function StudentsTable(props) {
             props.delFun(student)
         }
     }
+
+
 
     return (
         <div>
@@ -46,7 +47,7 @@ function StudentsTable(props) {
                                     <td>{student.age}</td>
                                     <td>{student.program}</td>
                                     <td>
-                                        <IconButton className="text-danger" onClick={() => deleteStudent(student)}><Icon>delete</Icon></IconButton>
+                                       { localStorage.getItem('group')?.toLocaleLowerCase() !== 'students' &&  <IconButton className="text-danger" onClick={() => deleteStudent(student)}><Icon>delete</Icon></IconButton> } 
                                         <Link to={{ pathname: `/studentEdit/${student.id}`, state: { student: student } }}><IconButton className="text-success"><Icon>edit</Icon></IconButton></Link>
                                     </td>
                                 </tr>

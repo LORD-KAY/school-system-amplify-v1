@@ -1,0 +1,26 @@
+nav{
+    box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.199);
+   
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.navigation .userAuth_and_userProfile a{
+    /* color: rgb(0, 224, 176); */
+}
+.navigation .userAuth_and_userProfile .user{
+    display: flex;
+    align-items: center;
+}
+
+.Cognitoregister {
+    margin-top: 2rem;
+}
+.Cognitoregister label{
+    color: rgb(3, 175, 138);
+    font-weight: 500;
+}

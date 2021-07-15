@@ -13,6 +13,7 @@ export const getTodo = /* GraphQL */ `
       image
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -33,8 +34,41 @@ export const listTodos = /* GraphQL */ `
         image
         createdAt
         updatedAt
+        owner
       }
       nextToken
+    }
+  }
+`;
+export const searchTodos = /* GraphQL */ `
+  query SearchTodos(
+    $filter: SearchableTodoFilterInput
+    $sort: SearchableTodoSortInput
+    $limit: Int
+    $nextToken: String
+    $from: Int
+  ) {
+    searchTodos(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+    ) {
+      items {
+        id
+        firstname
+        lastname
+        age
+        studentId
+        program
+        image
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      total
     }
   }
 `;

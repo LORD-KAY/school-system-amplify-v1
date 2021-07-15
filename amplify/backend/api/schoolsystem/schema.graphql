@@ -1,4 +1,12 @@
-type Todo @model {
+type Todo
+  @model
+  @auth(
+    rules: [
+      { allow: owner, operations: [create, delete, read, update] }
+      { allow: groups, groups: ["Admin"] }
+    ]
+  )
+  @searchable {
   id: ID!
   firstname: String!
   lastname: String!

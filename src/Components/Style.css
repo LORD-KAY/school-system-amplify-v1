@@ -1,0 +1,91 @@
+.navigationBar {
+  background: white;
+  box-shadow: 1px 2px 14px rgba(0, 0, 0, 0.192);
+}
+.navigationBar .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.navigationBar .brandName {
+  display: flex;
+  align-items: center;
+}
+.navigationBar .brandName h3 {
+  font-size: 1.5rem;
+  position: relative;
+  top: 5px;
+  left: 10px;
+  font-weight: 600;
+}
+.navigationBar .brandName a {
+  text-decoration: none;
+  color: rgb(31, 207, 178);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigationBar .userAuth_and_userProfile .user {
+  display: flex;
+  align-items: center;
+}
+
+.navigationBar .userAuth_and_userProfile .user .userShort {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.header {
+  padding: 4rem 0rem 1rem 0rem;
+}
+.header h1 {
+  font-size: 2rem;
+  color: grey;
+}
+
+.header hr {
+  width: 6%;
+  text-align: start;
+  padding: 1px;
+  border: none;
+}
+
+.searchSection {
+  padding: 2rem 0rem;
+}
+.searchSection input {
+  width: 70%;
+  padding: 9px 20px;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.192);
+  border-radius: 4pc;
+  outline: none;
+  /* transition: ease-in-out all 1.4s; */
+}
+.searchSection button {
+  width: 15%;
+  padding: 10px 20px;
+  border: none;
+  background: rgb(31, 207, 178);
+  border-radius: 4pc;
+  position: relative;
+  outline: none;
+  right: 60px;
+  font-weight: bold;
+  color: #fff;
+}
+.searchSection button:hover {
+  width: 15%;
+  padding: 10px 20px;
+  border: none;
+  background: rgb(31, 172, 207);
+}
+
+.tableSection {
+  padding: 1rem 1rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.123);
+}
