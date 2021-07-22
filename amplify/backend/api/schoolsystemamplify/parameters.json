@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "schoolsystemamplify",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authschoolsystemamplifyb4ac87b4",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

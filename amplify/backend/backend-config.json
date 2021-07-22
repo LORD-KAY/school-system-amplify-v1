@@ -1,0 +1,33 @@
+{
+  "auth": {
+    "schoolsystemamplifyb4ac87b4": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "api": {
+    "schoolsystemamplify": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authschoolsystemamplifyb4ac87b4"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
+  },
+  "storage": {
+    "schoolsystemimages": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}
