@@ -27,6 +27,7 @@ function StudentsTable(props) {
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Student ID</th>
+                        <th>Phone</th>
                         <th>Age</th>
                         <th>Course</th>
                         <th>Action</th>
@@ -40,10 +41,11 @@ function StudentsTable(props) {
                             return (
                                 <tr key={student.id}>
                                     <td>{studIndex}</td>
-                                    <td>{student.image ? <img src={student.image} alt="Student Image" style={{ borderRadius: '50px', height: '55px', width: '55px' }} /> : student.firstname.charAt(0)}</td>
+                                    <td>{student.image ? <img  src={student.image} alt="Student" style={{ borderRadius: '50px', height: '55px', width: '55px' }} /> : student.firstname.charAt(0)}</td>
                                     <td>{student.firstname}</td>
                                     <td>{student.lastname}</td>
                                     <td>{student.studentId}</td>
+                                    <td>{student.phone}</td>
                                     <td>{student.age}</td>
                                     <td>{student.program}</td>
                                     <td>

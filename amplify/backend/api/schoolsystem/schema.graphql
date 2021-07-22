@@ -14,4 +14,5 @@ type Todo
   studentId: String
   program: String
   image: String
+  phone: String
 }

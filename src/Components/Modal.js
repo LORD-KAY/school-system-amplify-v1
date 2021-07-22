@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Modal, Form } from 'react-bootstrap'
 import { Storage } from 'aws-amplify'
 
-const initStudentFormData = { firstname: '', lastname: '', age: '', studentId: '', program: 'Bsc. Computer Science' }
+const initStudentFormData = { firstname: '', lastname: '', age: '', phone: '', studentId: '', program: 'Bsc. Computer Science' }
 
 function AddStudentModal(props) {
 
@@ -52,13 +52,17 @@ function AddStudentModal(props) {
                             <input type="text" value={studentFormData.lastname} name="lastname" className="form-control" onChange={e => onFormChange(e)} />
                         </div>
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-md-4">
                                 <label>Student ID</label>
                                 <input type="text" name="studentId" value={studentFormData.studentId} onChange={e => onFormChange(e)} className="form-control" />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-4">
                                 <label>Age</label>
                                 <input type="text" name="age" value={studentFormData.age} onChange={e => onFormChange(e)} className="form-control" />
+                            </div>
+                            <div className="col-md-4">
+                                <label>Phone Number</label>
+                                <input type="text" name="phone" value={studentFormData.phone} onChange={e => onFormChange(e)} className="form-control" />
                             </div>
                         </div>
                         <div>
