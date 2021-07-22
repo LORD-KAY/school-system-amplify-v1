@@ -15,4 +15,5 @@ type Todo
   program: String
   image: String
   phone: String
+  email: String
 }
