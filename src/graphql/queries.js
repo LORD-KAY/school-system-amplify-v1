@@ -12,6 +12,7 @@ export const getTodo = /* GraphQL */ `
       program
       image
       phone
+      email
       createdAt
       updatedAt
       owner
@@ -34,6 +35,7 @@ export const listTodos = /* GraphQL */ `
         program
         image
         phone
+        email
         createdAt
         updatedAt
         owner
@@ -66,6 +68,7 @@ export const searchTodos = /* GraphQL */ `
         program
         image
         phone
+        email
         createdAt
         updatedAt
         owner

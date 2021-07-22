@@ -15,6 +15,7 @@ export const createTodo = /* GraphQL */ `
       program
       image
       phone
+      email
       createdAt
       updatedAt
       owner
@@ -35,6 +36,7 @@ export const updateTodo = /* GraphQL */ `
       program
       image
       phone
+      email
       createdAt
       updatedAt
       owner
@@ -55,6 +57,7 @@ export const deleteTodo = /* GraphQL */ `
       program
       image
       phone
+      email
       createdAt
       updatedAt
       owner
