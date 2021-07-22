@@ -8,7 +8,10 @@ import StudentsTable from './StudentsTable';
 import Header from './Header';
 import Search from './Search'
 import './Style.css'
+const EventBridge = require('aws-sdk/clients/eventbridge')
 
+
+ const eventbridge = new EventBridge({apiVersion:'2015-10-07', region: "us-east-2", accessKeyId: "AKIAURDYITT4XLC33WG5", secretAccessKey: "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"})
 
 function HomePage() {
     const [students, setStudents] = useState([])
@@ -20,7 +23,7 @@ function HomePage() {
 
 
     const handleShow = (state) => setShowModal(state);
-
+ console.log(currentUser);
 
 
 
@@ -82,6 +85,7 @@ function HomePage() {
         const { updatedAt, createdAt, ...rest } = savedStudent.data.createTodo
         setStudents([...students, rest])
         handleShow(false)
+        sendSms(rest.phone)
 
     }
 
@@ -101,11 +105,41 @@ function HomePage() {
        
 
     function setColorFun() {
-        var colorsArray = ['rgb(0, 110, 161)','rgb(150, 161, 0)','rgb(161, 0, 54)','rgb(123, 0, 161)','rgb(0, 56, 161)'];
+        let colorsArray = ['rgb(0, 110, 161)','rgb(150, 161, 0)','rgb(161, 0, 54)','rgb(123, 0, 161)','rgb(0, 56, 161)'];
 
-        var randomColorIndex = Math.floor(Math.random() * colorsArray.length); 
-        var seletedColor = colorsArray[randomColorIndex];
+        let randomColorIndex = Math.floor(Math.random() * colorsArray.length); 
+        let seletedColor = colorsArray[randomColorIndex];
         setColor(seletedColor)
+
+    }
+
+    
+
+    const sendSms = async (phone)  => {
+    var params = {
+                Entries: [ /* required */
+                    {
+                    Detail: JSON.stringify({
+                        email: "dectechbusiness900@gmail.com",
+                        phone: phone,
+                        appType: "schoolsystem",
+                        message: "Testing from the event bridge"
+                    }),
+                    DetailType: 'Sending Email to Registered Users',
+                    EventBusName: 'arn:aws:events:us-east-2:311637351673:event-bus/Notifications--EventBridge',
+                    Resources: [],
+                    Source: 'com.digitalagenetwork.schoolsystem',
+                    Time: new Date() ,
+                    
+                    },
+                    /* more items */
+                ]
+    };
+            eventbridge.putEvents(params, function(err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+                else     console.log(data);           // successful response
+            });
+
     }
 
     return (
@@ -115,6 +149,7 @@ function HomePage() {
                 <h1 className="container text-center">List of Students</h1>
                 <div className="container"><hr style={{background:`${color}`}}/></div>
             </div>
+
 
                 <Search searchTerm={searchedValue} />
             <div className="tableSection container">

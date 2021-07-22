@@ -10,7 +10,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "aws-amplify": "^4.1.2",
-    "aws-sdk": "^2.944.0",
+    "aws-sdk": "^2.951.0",
     "bootstrap": "^4.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
