@@ -64,7 +64,7 @@ function HomePage() {
   async function getCurrentUser() {
     const { signInUserSession, attributes } =
       await Auth.currentAuthenticatedUser();
-
+    console.log(attributes);
     setCurrentUser(attributes);
     if (signInUserSession.accessToken.payload["cognito:groups"]) {
       localStorage.setItem(

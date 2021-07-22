@@ -16,5 +16,24 @@
         "schoolsystemamplifyb4ac87b4": {}
       }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-schoolsystemamplify-dev-211904-authRole",
+      "UnauthRoleArn": "arn:aws:iam::036409870119:role/amplify-schoolsystemamplify-dev-211904-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::036409870119:role/amplify-schoolsystemamplify-dev-211904-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-schoolsystemamplify-dev-211904-deployment",
+      "UnauthRoleName": "amplify-schoolsystemamplify-dev-211904-unauthRole",
+      "StackName": "amplify-schoolsystemamplify-dev-211904",
+      "StackId": "arn:aws:cloudformation:us-east-1:036409870119:stack/amplify-schoolsystemamplify-dev-211904/75ef6ed0-eb32-11eb-aa54-12ea182b4763",
+      "AmplifyAppId": "d2bamynw91xqeu"
+    },
+    "categories": {
+      "auth": {
+        "schoolsystemamplifyb4ac87b4": {},
+        "userPoolGroups": {}
+      }
+    }
   }
 }
