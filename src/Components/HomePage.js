@@ -17,8 +17,8 @@ const EventBridge = require("aws-sdk/clients/eventbridge");
 const eventbridge = new EventBridge({
   apiVersion: "2015-10-07",
   region: "us-east-1",
-  accessKeyId: "AKIAURDYITT4XLC33WG5",
-  secretAccessKey: "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",
+  accessKeyId: "AKIAQQ6RSQ4T4DUM2E4T",
+  secretAccessKey: "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",
 });
 
 function HomePage() {
