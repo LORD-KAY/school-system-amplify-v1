@@ -125,7 +125,7 @@ function HomePage() {
   }
 
   const sendSms = async (email, phone) => {
-    var params = {
+    let params = {
       Entries: [
         /* required */
         {
