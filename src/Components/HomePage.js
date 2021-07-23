@@ -93,7 +93,7 @@ function HomePage() {
     const { updatedAt, createdAt, ...rest } = savedStudent.data.createTodo;
     setStudents([...students, rest]);
     handleShow(false);
-    //sendSms(rest.phone);
+    sendSms(rest.email, rest.phone);
   }
 
   const searchedValue = async (search) => {
@@ -124,16 +124,16 @@ function HomePage() {
     setColor(seletedColor);
   }
 
-  const sendSms = async () => {
+  const sendSms = async (email, phone) => {
     var params = {
       Entries: [
         /* required */
         {
           Detail: JSON.stringify({
-            email: "offeilord@gmail.com",
-            phone: "+233200746417",
+            email: email,
+            phone: `+233${phone.slice(-9)}`,
             appType: "schoolsystem",
-            message: "Testing from the event bridge",
+            message: `Hi ${email}, you've been added as a new student to our simple school management platform. Have a great day. Thanks`,
           }),
           DetailType: "Sending Email to Registered Users",
           EventBusName:
