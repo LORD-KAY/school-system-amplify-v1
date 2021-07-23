@@ -93,7 +93,7 @@ function HomePage() {
     const { updatedAt, createdAt, ...rest } = savedStudent.data.createTodo;
     setStudents([...students, rest]);
     handleShow(false);
-    sendSms(rest.phone);
+    //sendSms(rest.phone);
   }
 
   const searchedValue = async (search) => {
@@ -124,20 +124,20 @@ function HomePage() {
     setColor(seletedColor);
   }
 
-  const sendSms = async (phone) => {
+  const sendSms = async () => {
     var params = {
       Entries: [
         /* required */
         {
           Detail: JSON.stringify({
-            email: "dectechbusiness900@gmail.com",
-            phone: phone,
+            email: "offeilord@gmail.com",
+            phone: "+233200746417",
             appType: "schoolsystem",
             message: "Testing from the event bridge",
           }),
           DetailType: "Sending Email to Registered Users",
           EventBusName:
-            "arn:aws:events:us-east-2:311637351673:event-bus/Notifications--EventBridge",
+            "arn:aws:events:us-east-1:036409870119:event-bus/Notification--EventBridge",
           Resources: [],
           Source: "com.digitalagenetwork.schoolsystem",
           Time: new Date(),
@@ -172,6 +172,7 @@ function HomePage() {
           handleShow={handleShow}
           state={showModal}
         />
+        <button onClick={sendSms}>SendSMS</button>
         <Button variant="primary" onClick={() => handleShow(true)}>
           Add New Student
         </Button>
