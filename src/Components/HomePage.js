@@ -172,7 +172,6 @@ function HomePage() {
           handleShow={handleShow}
           state={showModal}
         />
-        <button onClick={sendSms}>SendSMS</button>
         <Button variant="primary" onClick={() => handleShow(true)}>
           Add New Student
         </Button>
