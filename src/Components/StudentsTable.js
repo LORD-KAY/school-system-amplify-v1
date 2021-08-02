@@ -61,7 +61,7 @@ function StudentsTable(props) {
                 <td>{student.program}</td>
                 <td>
                   {localStorage.getItem("group")?.toLocaleLowerCase() !==
-                    "students" && (
+                    "student" && (
                     <IconButton
                       className="text-danger"
                       onClick={() => deleteStudent(student)}
